@@ -4,6 +4,6 @@ python:
 install:
  - pip install -e .
  - pip install coveralls pytest pytest-cov
-script: python setup.py test 
+script: py.test
 after_success:
   - coveralls
