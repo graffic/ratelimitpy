@@ -1,3 +1,7 @@
+"""
+Flask application with /hotels endpoint that demonstrates a rate limit
+behaviour using a token bucket.
+"""
 import os
 from flask import Flask, request, abort, jsonify
 from ratelimitpy.db import HotelsRepository
@@ -16,8 +20,9 @@ hotels_repository = HotelsRepository('hoteldb.csv')
 
 @app.route('/hotels', methods=['GET'])
 @require_api_key
-@limit(requests=1, per_seconds=10, ban=20)
+@limit(requests=1, per_seconds=10, ban=5 * 60)
 def hotels_endpoint():
+    """List hotels by city name"""
     city = request.args.get("city")
     if city is None:
         abort(400)
