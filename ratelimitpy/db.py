@@ -38,5 +38,5 @@ class HotelsRepository:
     def get_by_city(self, city, ascending):
         hotels = self.__hotels.get(city, [])
         if not ascending:
-            hotels.reverse()
+            return hotels[::-1]
         return hotels

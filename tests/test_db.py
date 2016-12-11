@@ -40,3 +40,8 @@ class TestHotelRepository:
     def test_get_by_city(self, hotel_repo, asc, res):
         assert [x.price for x in hotel_repo.get_by_city("Bkk", asc)] == res
 
+    def test_get_twice_doesnt_modify_original(self, hotel_repo):
+        hotel_repo.get_by_city("Bkk", False)
+        res = hotel_repo.get_by_city("Bkk", True)
+        assert [x.price for x in res] == [50, 1000]
+
