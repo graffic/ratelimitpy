@@ -4,6 +4,6 @@ python:
 install:
  - pip install .
  - pip install coveralls pytest pytest-cov
-script: py.test
+script: py.test --cov=ratelimitpy
 after_success:
   - coveralls
