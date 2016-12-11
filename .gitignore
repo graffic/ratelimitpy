@@ -1,0 +1,13 @@
+# Python venv
+env/
+# Python egg for local installations
+ratelimitpy.egg-info/
+# Python cache
+__cache__
+*.pyc
+# Pytest cache
+.cache/
+# Coverage
+.coverage
+# vim
+*.swp
