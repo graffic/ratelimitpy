@@ -1,5 +1,7 @@
 # RateLimit Example
 
+[![Build Status](https://travis-ci.org/graffic/ratelimitpy.svg?branch=master)](https://travis-ci.org/graffic/ratelimitpy)
+
 ## Installing and running
 
 This example was written in Python 3.5.2. Steps to install:
