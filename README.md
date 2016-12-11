@@ -1,6 +1,7 @@
 # RateLimit Example
 
 [![Build Status](https://travis-ci.org/graffic/ratelimitpy.svg?branch=master)](https://travis-ci.org/graffic/ratelimitpy)
+[![Coverage Status](https://coveralls.io/repos/github/graffic/ratelimitpy/badge.svg?branch=master)](https://coveralls.io/github/graffic/ratelimitpy?branch=master)
 
 ## Installing and running
 
