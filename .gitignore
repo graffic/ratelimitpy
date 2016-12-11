@@ -11,3 +11,5 @@ __cache__
 .coverage
 # vim
 *.swp
+# setup tools
+.eggs/
