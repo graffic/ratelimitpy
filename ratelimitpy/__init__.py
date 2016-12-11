@@ -28,5 +28,3 @@ def hotels_endpoint():
         abort(400)
     asc = request.args.get('asc', 'true') == 'true'
     return jsonify(result=hotels_repository.get_by_city(city, asc))
-
-

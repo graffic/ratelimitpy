@@ -1,8 +1,9 @@
 import csv
 
+
 def read_hotels_csv(filename):
     """Build an dictionary with hotels
-    
+
     The dictionary key is the city and it contains the hotels sorted by price
     """
     hotels = {}
@@ -20,7 +21,6 @@ def read_hotels_csv(filename):
         hotels[city].sort(key=lambda x: x.price)
 
     return hotels
-
 
 
 class Hotel:

@@ -1,6 +1,7 @@
 from flask.json import JSONEncoder
 from ratelimitpy.db import Hotel
 
+
 def hotel_encode(hotel):
     return {
         "City": hotel.city,
@@ -15,4 +16,3 @@ class AppJSONEncoder(JSONEncoder):
         if isinstance(obj, Hotel):
             return hotel_encode(obj)
         return super(AppJSONEncoder, self).default(obj)
-

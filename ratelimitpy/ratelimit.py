@@ -32,8 +32,6 @@ class TokenBucket:
         elapsed_token_periods = int((now - self.__last)) // self.__per_seconds
         tokens = self.__tokens * elapsed_token_periods
 
-        #print("Elapsed: {0} Periods: {1} Extra:{2}, Current {3}".format(now - self.__last,
-        #    elapsed_token_periods, tokens, self.__bucket))
         if tokens > 0:
             self.__bucket = min(self.__tokens, self.__bucket + tokens)
             if self.__bucket > 0:
@@ -49,7 +47,8 @@ class TokenBucket:
             # You're already banned:
             return False
         # Ban the bucket
-        self.__bucket -= (self.__ban - self.__per_seconds) // self.__per_seconds
+        diff = (self.__ban - self.__per_seconds)
+        self.__bucket -= diff // self.__per_seconds
         self.__banned = True
         return False
 
@@ -72,6 +71,7 @@ def limit(requests, per_seconds, ban):
                 requests=requests, per_seconds=per_seconds, ban=ban)
         token_db = {}
         lock = Lock()
+
         @wraps(original)
         def wrapped(*args, **kwargs):
             with lock:
