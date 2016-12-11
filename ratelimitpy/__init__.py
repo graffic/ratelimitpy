@@ -23,10 +23,10 @@ hotels_repository = HotelsRepository('hoteldb.csv')
 @limit(requests=1, per_seconds=10, ban=5 * 60)
 def hotels_endpoint():
     """List hotels by city name"""
-    city = request.args.get("city")
+    city = request.args.get('city')
     if city is None:
         abort(400)
-    asc = request.args.get("asc", "true") == "true"
+    asc = request.args.get('asc', 'true') == 'true'
     return jsonify(result=hotels_repository.get_by_city(city, asc))
 
 
