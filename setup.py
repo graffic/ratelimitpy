@@ -7,5 +7,7 @@ setup(
     packages=['ratelimitpy'],
     include_package_data=True,
     zip_safe=False,
-    install_requires=['Flask']
+    install_requires=['Flask'],
+    setup_requires=['pytest-runner'],
+    tests_require=['pytest', 'pytest-cov']
 )
